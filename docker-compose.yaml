@@ -1,0 +1,26 @@
+services:
+  build:
+    volumes:
+      - ./:/root/opt/works
+      - /System/Library/Fonts:/root/opt/fonts
+    image: ghcr.io/typst/typst:latest 
+    environment:
+      - TYPST_FONT_PATHS=/root/opt/fonts
+    working_dir: /root/opt/works
+    env_file: .env
+    command: "typst compile --input CREDIT='$CREDIT' file.typ"
+    restart: no
+    network_mode: none
+  watch:
+    volumes:
+      - ./:/root/opt/works
+      - /System/Library/Fonts:/root/opt/fonts
+    image: ghcr.io/typst/typst:latest 
+    environment:
+      - TYPST_FONT_PATHS=/root/opt/fonts
+    working_dir: /root/opt/works
+    env_file: .env
+    command: "typst watch --input CREDIT='$CREDIT' file.typ"
+    restart: no
+    network_mode: none
+  
