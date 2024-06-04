@@ -1,0 +1,1 @@
+docker run --rm --name typst -v ./:/root/opt -v /System/Library/Fonts/:/root/opt/fonts -it ghcr.io/typst/typst:latest
