@@ -1,0 +1,21 @@
+name: Build and Publish Docker Image
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-13
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build
+        run: |
+          docker run --rm --name typst -v ./:/root/opt -v /System/Library/Fonts/:/root/opt/fonts -it ghcr.io/typst/typst:latest typst compile --font-path ./fonts/ --input CREDIT="appare45" opt/file.typ
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          path: file.pdf
