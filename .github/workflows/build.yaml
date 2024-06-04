@@ -16,9 +16,10 @@ jobs:
         run: brew install typst
       - name: Build
         run: |
-          typst compile --font-path ./fonts/ --input CREDIT="appare45" file.typ
+          typst compile CREDIT="${{ env.CREDIT }}" file.typ
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           path: file.pdf
+          retention-days: 1
           name: Artifact
