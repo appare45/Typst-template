@@ -1,4 +1,4 @@
-name: Build and Publish Docker Image
+name: Build
 
 on:
   release:
@@ -21,3 +21,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: file.pdf
+          name: Artifact
