@@ -21,8 +21,10 @@ typst compile --input CREDIT="appare45" file.typ
 
 ### Dockerを使う場合
 
+この場合は`./file.typ`のみがコンパイルされるため、複数ファイルをwatchする必要がある場合は`./file.typ`に`#include`を使う
+
 ```bash
-docker run --rm --name typst -v ./:/root/opt -v /System/Library/Fonts/:/root/opt/fonts ghcr.io/typst/typst:latest typst watch --font-path ./opt/fonts/ --input CREDIT="YOUR_NAME" opt/file.typ
+docker compose watch
 ```
 
 終了時は
