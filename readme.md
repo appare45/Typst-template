@@ -1,7 +1,18 @@
 # Typst-template
 
 macでビルド可能なGitHub Actions付きTypest Template
+
 [![Build](https://github.com/appare45/Typst-template/actions/workflows/build.yaml/badge.svg)](https://github.com/appare45/Typst-template/actions/workflows/build.yaml)
+
+## Credit
+
+クレジットを設定する必要がある。
+
+クレジットは`.env`より提供される。
+
+```
+CREDIT=appare45
+```
 
 ## Build
 
