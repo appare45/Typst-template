@@ -1,13 +1,13 @@
-#set text(font: "Hiragino Mincho ProN")
-#set heading()
-#show heading: set text(font: "Hiragino Kaku Gothic ProN")
+#import "default.typ": template
+#import "util.typ": Title
+#let title = [タイトル]
+#let author = sys.inputs.CREDIT
+#show: doc => template(doc, title, author)
+#Title(title, author)
 
-#align(center, text(size: 17pt, font: "Hiragino Kaku Gothic ProN")[
-  *タイトル*
-])
-
-#align(center, text(font: "Hiragino Kaku Gothic ProN")[
-  #sys.inputs.CREDIT
-])
+= こんにちは
 
 こんにちは
+
+#pagebreak()
+#include "class1/file.typ"

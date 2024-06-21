@@ -8,7 +8,7 @@ services:
       - TYPST_FONT_PATHS=/root/opt/fonts
     working_dir: /root/opt/works
     env_file: .env
-    command: "find -type f -name '*.typ' -exec typst compile --input CREDIT='$CREDIT' {} \\; " 
+    command: "find -type f -name '*.typ' -exec typst compile --input CREDIT='$CREDIT' {} --root /root/opt/works \\; " 
     restart: no
     network_mode: none
   watch:
